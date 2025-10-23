@@ -1,0 +1,14 @@
+#!/bin/bash
+# ===== Update Packages =====
+apt update -y
+
+# ===== Install Nginx =====
+apt install nginx -y
+
+# ===== Start and Enable Nginx =====
+systemctl start nginx
+systemctl enable nginx
+
+# ===== Custom Web Page =====
+echo "<h1>Welcome to NGINX on AWS EC2 - Ubuntu Server</h1>" > /var/www/html/index.html
+
