@@ -1,0 +1,13 @@
+#!/bin/bash
+# ===== Update System =====
+yum update -y
+
+# ===== Install Nginx =====
+amazon-linux-extras install nginx1 -y
+
+# ===== Start and Enable Nginx =====
+systemctl start nginx
+systemctl enable nginx
+
+# ===== Optional: Add Custom Web Page =====
+echo "<h1>Welcome to NGINX on AWS EC2</h1>" > /usr/share/nginx/html/index.html
